@@ -1,0 +1,147 @@
+%-------------------------------------
+% Resum in LaTeX (XeLaTeX)
+% Author:  HF Yuan
+% Project: https://github.com/xyz-yuanhf/yuan-resume
+% Base on: https://github.com/mattyHerzig/mattys_resume
+%          http://www.jianxu.net/en/
+% License: MIT
+%------------------------------------
+
+\NeedsTeXFormat{LaTeX2e}
+
+% Page size
+\usepackage[top=0.3cm, bottom=0.2cm, left=1.8cm, right=2.3cm, marginparwidth=1.75cm]{geometry}
+% Line height
+\renewcommand{\baselinestretch}{1.07} 
+
+% Packages
+\usepackage{xcolor}
+\usepackage{setspace}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{tabularx}
+\usepackage{ragged2e}
+\usepackage{graphicx}
+\graphicspath{./images/}
+
+% Font style
+\usepackage{fontspec}
+\setmainfont{OpenSauceOne}[
+    Path=./Fonts/OpenSauceOne/,
+    Extension = .ttf,
+    UprightFont=*-Regular,
+    BoldFont=*-Bold,
+    ItalicFont=*-Italic,
+    BoldItalicFont=*-BoldItalic
+    ]
+\newfontfamily\Courier{CourierNew}[
+    Path=./Fonts/Courier/,
+    Extension = .ttf,
+    UprightFont=*-Regular
+    ]
+
+% Emph style
+\renewcommand{\emph}[1]{\textbf{\fontsize{11pt}{11pt}\selectfont #1}}
+
+% Section block
+\newcommand{\sectionBlock}[2]{%
+    \noindent
+    \begin{minipage}[t]{2.7cm} % Title
+    \raggedright
+    #1
+    \end{minipage}
+    \hfill
+    \begin{minipage}[t]{13.85cm} % Content
+    \raggedright
+    #2
+    \end{minipage}
+    \vspace{12pt}
+}
+
+% Left section title
+\titleformat{\section}{
+  \setstretch{1.0}
+  \scshape\raggedright
+  \fontsize{12pt}{12pt}\selectfont 
+}{}{0em}{}
+
+% Skill list
+\newcommand{\skillListStart}{\begin{itemize}[left=0pt, label={}, itemsep=0pt]}
+\newcommand{\skillListEnd}{\end{itemize}\vspace{0pt}}
+
+\newcommand{\skillColumns}[4]{
+  \vspace{-19pt}  % Add negative space to align with section title
+  \begin{tabular}[t]{@{}>{\raggedright}p{3.3cm}@{\hspace{0.5cm}}>{\raggedright}p{3.3cm}@{\hspace{0.5cm}}>{\raggedright}p{3.3cm}@{\hspace{0.5cm}}>{\raggedright}p{3.3cm}@{}}
+    \begin{itemize}[left=0pt, label={}, itemsep=0pt, topsep=0pt]
+      #1
+    \end{itemize} &
+    \begin{itemize}[left=0pt, label={}, itemsep=0pt, topsep=0pt]
+      #2
+    \end{itemize} &
+    \begin{itemize}[left=0pt, label={}, itemsep=0pt, topsep=0pt]
+      #3
+    \end{itemize} &
+    \begin{itemize}[left=0pt, label={}, itemsep=0pt, topsep=0pt]
+      #4
+    \end{itemize}
+  \end{tabular}
+}
+
+% Skill category
+\newcommand{\skillCategory}[1]{
+  \item \emph{#1}:
+}
+
+% Languages list
+\newcommand{\langListStart}{\begin{itemize}[left=0pt, label={}, itemsep=0pt]}
+\newcommand{\langListEnd}{\end{itemize}\vspace{0pt}}
+
+% Item list
+\newcommand{\itemListStart}{\begin{itemize}[itemsep=0pt]}
+\newcommand{\itemListEnd}{\end{itemize}}
+\newcommand{\myItem}[1]{
+  \item{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+% Introduction information
+\newcommand{\textPlain}[1]{
+  \renewcommand{\arraystretch}{1.2}
+  \begin{tabular}[t]{p{13.74cm}}
+    #1
+  \end{tabular}\vspace{21pt}
+}
+
+% Experience information
+\newcommand{\expHeading}[5]{
+  \renewcommand{\arraystretch}{1.2}
+    \begin{tabular}[t]{p{13.74cm}}
+      \emph{#1} \hfill #2 \\
+      \textit{#3} \hfill #4 \vspace{7pt} \\
+      #5
+    \end{tabular}\vspace{7pt}
+}
+
+% Education information
+\newcommand{\eduHeading}[4]{
+  \renewcommand{\arraystretch}{1.2}
+    \begin{tabular}[t]{p{13.74cm}}
+      \emph{#1} \hfill #2 \\
+      \textit{#3} \hfill #4 \\
+    \end{tabular}\vspace{7pt}
+}
+
+% Internship information
+\newcommand{\internHeading}[4]{
+  \renewcommand{\arraystretch}{1.2}
+    \begin{tabular}[t]{p{13.74cm}}
+      \emph{#1} \hfill #2 \\
+      \textit{#3} \hfill #4 \\
+    \end{tabular}\vspace{7pt}
+}
+
+\newcommand{\reference}[1]{
+  \vspace{14pt}
+  \center \textit{#1}
+}

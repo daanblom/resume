@@ -1,0 +1,132 @@
+%-------------------------------------
+% Resume in LaTeX (XeLaTeX)
+% Author:  Daan Blom
+% Project: https://github.com/daanblom/resume 
+% Base on: https://github.com/xyz-yuanhf/yuan-resume
+%          https://github.com/mattyHerzig/mattys_resume
+%          http://www.jianxu.net/en/
+% License: MIT
+%------------------------------------
+
+\documentclass[a4paper, 10pt]{article}
+\usepackage{styling}  % Includes styling.sty as package
+
+\hyphenpenalty=10000
+\exhyphenpenalty=10000
+
+\begin{document}
+\pagenumbering{gobble}
+
+% HEADER
+\begin{flushright}
+  \setstretch{0.6}
+  \item { hello@daanblom.com}  % E-mail address
+  \item { www.daanblom.com}  % Website
+\end{flushright}\vspace{-45pt} % Tweak line height heading
+
+\begin{flushleft}  % Replace Logo size and position if necessary 
+  \raisebox{0.2cm}{\includegraphics[height=0.7cm]{Images/logo.png}}
+  \noindent\rule{\textwidth}{0.4pt}
+\end{flushleft}
+
+% INTRODUCTION
+\sectionBlock{
+\section{Introduction}
+}{
+\textPlain
+{Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam laoreet leo leo. Fusce cursus ligula et viverra placerat. Nulla euismod metus enim, ac semper neque porttitor id. Sed blandit nisi vel turpis efficitur tristique. Cras et porta erat. Donec dapibus fringilla urna, ut hendrerit elit vehicula a. Phasellus eu tempor orci,}
+}
+% EXPERIENCE
+\sectionBlock{
+\section{Experience}
+}{
+\expHeading
+{Mr. Prezident}{Amsterdam, Netherlands}{Graphic design, Motion, Presentation development}{xxx xxxx - Jun 2025} 
+{Started as a graphic designer, quickly realizing }
+\expHeading
+{Young Capital}{Randstad, Netherlands}{Freelance Photographer}{Jul 2017 - Mar 2018}
+{Photographed close to 20 locations, capturing contract workers during their routines. Capturing interesting places like the Amsterdam Arena, the DHL distribution center at Schiphol and the first Picnic fulfilment centre in Utrecht.}
+\expHeading
+{daanblom.com}{Randstad, Netherlands}{Freelance designer, editor, creative.}{ 2012 - Now}
+{Started freelancing as a graphic designer shortly after I started my studies, Working with (inter)national clients mainly focussed on (event) branding, apparel, motion graphics and video editing.}
+\expHeading
+{Hoogvliet}{Leiden, Netherlands}{Stock clerk}{ 2009 - 2012}
+{}
+}
+% EDUCATION
+\sectionBlock{
+\section{Education}
+}{
+\eduHeading
+{Grafisch Lyceum Rotterdam}{Rotterdam, Netherlands}
+{Multimedia design}{Sep 2010 - May 2014}
+
+\eduHeading
+{Vlietland College}{Leiden, Netherlands}
+{MAVO}{Sep 2006 - May 2010}
+}
+%INTERNSHIPS
+\sectionBlock{
+\section{Internships}
+}{
+\internHeading
+{Mr. Prezident}{Amsterdam, Netherlands}
+{Graphic design intern.}{Jun 2024 - Sep 2024}
+}
+% LANGUAGES
+\sectionBlock{
+\section{Languages}
+}{
+\langListStart
+\justifying
+\item \emph{Human}: Dutch, English.
+\item \emph{Computer}: {\Courier \fontsize{11pt}{11pt}\selectfont Bash}, {\Courier \fontsize{11pt}{11pt}\selectfont HTML}, {\Courier \fontsize{11pt}{11pt}\selectfont CSS}, {\Courier \fontsize{11pt}{11pt}\selectfont Markdown}, {\Courier \fontsize{11pt}{11pt}\selectfont LaTeX}. \\
+  and basic understanding of {\Courier \fontsize{11pt}{11pt}\selectfont Python}, {\Courier \fontsize{11pt}{11pt}\selectfont Javascript}.
+\langListEnd
+}
+%SKILLS
+\sectionBlock{
+\section{Skills}
+}{
+\skillColumns
+{
+\skillCategory{Design}
+\item Illustrator
+\item Photoshop
+\item InDesign
+\item Figma
+\item Framer
+}
+{
+\skillCategory{Video \& VFX}
+\item After Effects
+\item Blender
+\item Premiere
+\item Rive
+\item Nuke
+}
+{
+\skillCategory{AI Tools}
+\item Cursor
+\item ChatGPT
+\item Midjourney
+\item Stable Diffusion
+\item ComfyUI
+}
+{
+\skillCategory{Tech}
+\item Docker
+\item Proxmox
+\item Git
+\item Linux/Unix
+\item Shell Scripting
+}
+}
+% References
+\sectionBlock{
+\section{ }
+}{
+\reference{
+References available upon request.}
+}
+\end{document}
